@@ -20,10 +20,8 @@ public class SecurityConfig {
         http
                 .cors(cors -> {}) // ✅ FIXED
                 .csrf(csrf -> csrf.disable())
-
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/login").permitAll()
-                        .anyRequest().authenticated()
+                        .anyRequest().permitAll()
                 )
 
                 .formLogin(form -> form
