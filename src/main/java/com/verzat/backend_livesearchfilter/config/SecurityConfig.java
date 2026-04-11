@@ -11,6 +11,8 @@ import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.web.cors.*;
 
+import java.util.List;
+
 @Configuration
 public class SecurityConfig {
 
@@ -51,7 +53,13 @@ public class SecurityConfig {
     public CorsConfigurationSource corsConfigurationSource() {
 
         CorsConfiguration config = new CorsConfiguration();
-        config.addAllowedOrigin("http://localhost:3000");
+        //config.addAllowedOrigin("http://localhost:3000");
+
+        List<String> allowedOrigins = List.of(
+                "http://localhost:3000",
+                "https://frontend-live-search-app.netlify.app/"
+        );
+        config.setAllowedOrigins(allowedOrigins);
         config.addAllowedMethod("*");
         config.addAllowedHeader("*");
         config.setAllowCredentials(true);
