@@ -7,10 +7,10 @@ import org.springframework.web.bind.annotation.*;
 import java.util.*;
 
 @RestController
-@RequestMapping("/api/users")
+@RequestMapping("api/users")
 //@CrossOrigin(origins = "http://localhost:3000", allowCredentials = "true")
-//@CrossOrigin(origins = "https://frontend-live-search-app.netlify.app/", allowCredentials = "true")
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "https://frontend-live-search-app.netlify.app/", allowCredentials = "true")
+//@CrossOrigin(origins = "*")
 public class UserController {
 
     private final UserService userService;
